@@ -1,0 +1,71 @@
+/* style.css - Estilos centrales para la librería */
+* { box-sizing: border-box; margin:0; padding:0; }
+body {
+  font-family: Arial, sans-serif;
+  background: #fafafa;
+  color: #222;
+  line-height:1.4;
+}
+
+/* Layout */
+.header {
+  background-image: url('../img/header-bg.jpg');
+  background-size: cover;
+  background-position: center;
+  padding: 30px 20px;
+  color: white;
+}
+.header .top {
+  display:flex;
+  align-items:center;
+  gap:16px;
+  max-width:1100px;
+  margin:0 auto;
+}
+.header img.logo { width:70px; height:auto; }
+.header h1 { font-size:28px; }
+
+/* Nav */
+nav {
+  background: #1f6f8b;
+  color: white;
+}
+nav .nav-inner { max-width:1100px; margin:0 auto; display:flex; gap:12px; padding:10px; flex-wrap:wrap; }
+nav a { color: white; text-decoration:none; padding:6px 10px; border-radius:4px; }
+nav a:hover { background: rgba(255,255,255,0.08); }
+
+/* Main container */
+.container { max-width:1100px; margin:20px auto; padding:0 16px; }
+
+/* Home: temas grid */
+.themes-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(260px,1fr)); gap:18px; }
+.theme-card { background:white; padding:14px; border-radius:8px; box-shadow:0 2px 6px rgba(0,0,0,0.06); }
+.theme-card img { width:100%; height:160px; object-fit:cover; border-radius:6px; }
+.theme-card h3 { margin:10px 0 6px; }
+.featured-book { display:flex; gap:12px; margin-top:10px; align-items:center; }
+
+/* Sección: lista de libros */
+.book-list { display:grid; grid-template-columns: repeat(auto-fit,minmax(220px,1fr)); gap:16px; }
+.book { background:white; padding:10px; border-radius:8px; box-shadow:0 1px 4px rgba(0,0,0,0.06); }
+.book img { width:100%; height:200px; object-fit:cover; border-radius:6px; }
+
+/* Form styles */
+.form-row { margin:8px 0; display:flex; gap:8px; flex-wrap:wrap; }
+label { display:block; font-size:14px; margin-bottom:6px; }
+input[type="text"], input[type="email"], input[type="password"], input[type="date"], select, textarea {
+  width:100%; padding:8px; border:1px solid #ccc; border-radius:4px;
+}
+input[type="radio"] { margin-right:6px; }
+button.primary { background:#1f6f8b; color:white; border:none; padding:10px 14px; border-radius:6px; cursor:pointer; }
+button.primary:hover { opacity:0.95; }
+
+/* Footer */
+footer { background:#f2f2f2; padding:16px 0; margin-top:24px; }
+.footer-inner { max-width:1100px; margin:0 auto; display:flex; justify-content:space-between; gap:12px; padding:0 16px; align-items:center; flex-wrap:wrap;}
+.socials a { margin-left:8px; text-decoration:none; color:#1f6f8b; }
+
+/* Responsive tweaks */
+@media (max-width:520px) {
+  .header h1 { font-size:20px; }
+  .featured-book { flex-direction:column; align-items:flex-start; }
+}

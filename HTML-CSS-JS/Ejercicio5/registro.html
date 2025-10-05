@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Registración</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- header + nav (igual que antes) -->
+  <header class="header">
+    <div class="top">
+      <img src="img/logo.png" alt="logo" class="logo">
+      <div><h1>Librería Buenas Letras</h1></div>
+    </div>
+  </header>
+  <nav>
+    <div class="nav-inner">
+      <a href="index.html">Inicio</a>
+      <a href="seccion1.html">Ficción</a>
+      <a href="seccion2.html">Deporte</a>
+      <a href="seccion3.html">Desarrollo Personal</a>
+      <a href="seccion4.html">Infantil</a>
+      <a href="registro.html">Registración</a>
+      <a href="contacto.html">Contacto</a>
+    </div>
+  </nav>
+
+  <main class="container">
+    <h2>Registración</h2>
+    <form action="#" method="post" style="max-width:600px;">
+      <div class="form-row">
+        <div style="flex:1">
+          <label for="nombre">Nombre</label>
+          <input id="nombre" name="nombre" type="text" required>
+        </div>
+        <div style="flex:1">
+          <label for="apellido">Apellido</label>
+          <input id="apellido" name="apellido" type="text" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div style="flex:1">
+          <label for="fecha">Fecha de nacimiento</label>
+          <input id="fecha" name="fecha" type="date" required>
+        </div>
+        <div style="flex:1">
+          <label for="email">Email</label>
+          <input id="email" name="email" type="email" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div style="flex:1">
+          <label for="password">Contraseña</label>
+          <input id="password" name="password" type="password" required>
+        </div>
+        <div style="flex:1">
+          <label>Sexo</label>
+          <div>
+            <label><input type="radio" name="sexo" value="f" required> Femenino</label>
+            <label style="margin-left:10px;"><input type="radio" name="sexo" value="m"> Masculino</label>
+            <label style="margin-left:10px;"><input type="radio" name="sexo" value="o"> Otro</label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="tema">Tema favorito</label>
+        <select id="tema" name="tema" required>
+          <option value="">-- Elegí un tema --</option>
+          <option value="ficcion">Ficción</option>
+          <option value="deporte">Deporte</option>
+          <option value="desarrollo">Desarrollo Personal</option>
+          <option value="infantil">Infantil</option>
+        </select>
+      </div>
+
+      <div style="margin-top:12px;">
+        <button class="primary" type="submit">Registrarme</button>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <div class="footer-inner">
+      <div>&copy; 2025 Librería Buenas Letras</div>
+      <div class="socials">
+        <a href="#">Instagram</a>
+        <a href="#">Facebook</a>
+      </div>
+      <div><a href="#">Términos y condiciones</a></div>
+    </div>
+  </footer>
+</body>
+</html>
