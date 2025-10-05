@@ -16,9 +16,9 @@ Cada ejercicio de la primer entrega se encuentra dentro de la carpeta `HTML-CSS-
 | 1 | CV en HTML | ✅ Completado | 4 páginas (index, estudios, experiencia, hobbies) correctamente vinculadas. |
 | 2 | Libro en HTML | ✅ Completado | Index con índice y 4 capítulos sobre deporte grupal. |
 | 3 | Tabla de Colores | ✅ Completado | Tabla 4x4 con reglas de color en filas, columnas y celdas. |
-| 4 | (próximo) | ⏳ En progreso | ... |
-| 5 | (próximo) | ⏳ Pendiente | ... |
-| 6 | (próximo) | ⏳ Pendiente | ... |
+| 4 | CSS a CV y Libro | ✅ Completado | Hojas de estilo separadas aplicadas a los ejercicios 1 y 2, mejorando presentación y legibilidad. |
+| 5 | Librería | ✅ Completado | Sitio web completo con layout unificado, cabecera, menú, pie, páginas principales y secciones, formulario de registración y contacto. |
+| 6 | HTML5 | ✅ Completado | Versión HTML5 del sitio de la Librería con etiquetas semánticas, layout unificado, páginas Index, 4 secciones, registración y contacto, formulario HTML5. |
 | 7 | JavaScript | ⏳ Pendiente | Funciones JS aplicadas a uno o más HTML. |
 
 ---
