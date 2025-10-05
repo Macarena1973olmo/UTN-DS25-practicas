@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejercicio 7 - JavaScript</title>
+  <style>
+    body { font-family: Arial, sans-serif; padding: 20px; }
+    h1 { color: #2c3e50; }
+    button { margin: 5px; padding: 5px 10px; }
+    input { margin: 5px; padding: 3px; width: 60px; }
+    #resultado { margin-top: 20px; font-weight: bold; white-space: pre; }
+    .grupo { margin-bottom: 15px; }
+  </style>
+</head>
+<body>
+  <h1>Ejercicio 7 - JavaScript</h1>
+
+  <!-- Ejercicio 1 -->
+  <div class="grupo">
+    <button onclick="sumar5()">Sumar 5 a un número</button>
+  </div>
+
+  <!-- Ejercicio 2 -->
+  <div class="grupo">
+    <button onclick="concatenarCadenas()">Concatenar cadenas</button>
+  </div>
+
+  <!-- Ejercicio 3 -->
+  <div class="grupo">
+    <button onclick="compararNumeros()">Comparar números</button>
+  </div>
+
+  <!-- Ejercicio 4 -->
+  <div class="grupo">
+    <button onclick="grupoPorNumero()">Grupo por número</button>
+  </div>
+
+  <!-- Ejercicio 5 -->
+  <div class="grupo">
+    <button onclick="sumatoria()">Sumatoria 0 a 10</button>
+  </div>
+
+  <!-- Ejercicio 6 -->
+  <div class="grupo">
+    <button onclick="productoArray()">Producto de un array</button>
+  </div>
+
+  <!-- Ejercicio 12 -->
+  <div class="grupo">
+    <label>Altura del medio-árbol: </label>
+    <input type="number" id="alturaArbol" min="1">
+    <button onclick="mostrarMedioArbol()">Generar medio-árbol</button>
+  </div>
+
+  <!-- Ejercicio 14 -->
+  <div class="grupo">
+    <label>Números para promedio (separados por espacio): </label>
+    <input type="text" id="numerosPromedio">
+    <button onclick="promedioArrayInput()">Calcular promedio</button>
+  </div>
+
+  <div id="resultado"></div>
+
+  <script src="script.js"></script>
+  <script>
+    // Funciones adaptadas para los inputs del HTML
+
+    function mostrarMedioArbol(){
+      let altura = Number(document.getElementById("alturaArbol").value);
+      if(!altura || altura < 1) altura = 5; // Valor por defecto
+      medioArbol(altura);
+    }
+
+    function promedioArrayInput(){
+      let input = document.getElementById("numerosPromedio").value;
+      if(!input) {
+        document.getElementById("resultado").innerText = "Ingrese valores válidos";
+        return;
+      }
+      let arr = input.split(" ").map(Number);
+      if(arr.some(isNaN)) {
+        document.getElementById("resultado").innerText = "Algunos valores no son números válidos";
+        return;
+      }
+      let promedio = arr.reduce((a,b)=>a+b,0)/arr.length;
+      document.getElementById("resultado").innerText = "Promedio: " + promedio;
+    }
+  </script>
+</body>
+</html>
