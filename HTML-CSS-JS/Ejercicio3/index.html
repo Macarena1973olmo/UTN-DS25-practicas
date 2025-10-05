@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>Ejercicio 3 - Tabla de Colores</title>
+  <style>
+    table {
+      border-collapse: collapse;
+      margin: 40px auto;
+    }
+
+    td {
+      width: 80px;
+      height: 80px;
+      text-align: center;
+      border: 2px solid #000;
+      background-color: #f0f0f0; /* color base para todas las celdas */
+    }
+
+    /* Segunda fila completa */
+    tr:nth-child(2) td {
+      background-color: #d1f7c4;
+    }
+
+    /* Tercer columna completa */
+    td:nth-child(3) {
+      background-color: #c4d7f7;
+    }
+
+    /* Intersección entre segunda fila y tercer columna */
+    tr:nth-child(2) td:nth-child(3) {
+      background-color: #f7c4d7;
+    }
+
+    /* Primera y última celda */
+    tr:first-child td:first-child,
+    tr:last-child td:last-child {
+      background-color: #f7f3c4;
+    }
+
+    /* Intersección entre tercera fila y segunda columna */
+    tr:nth-child(3) td:nth-child(2) {
+      background-color: #d9c4f7;
+    }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">Tabla de Colores</h1>
+  <table>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+      <td></td>
+      <td></td>
+    </tr>
+  </table>
+</body>
+</html>
