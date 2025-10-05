@@ -19,7 +19,7 @@ Cada ejercicio de la primer entrega se encuentra dentro de la carpeta `HTML-CSS-
 | 4 | CSS a CV y Libro | ✅ Completado | Hojas de estilo separadas aplicadas a los ejercicios 1 y 2, mejorando presentación y legibilidad. |
 | 5 | Librería | ✅ Completado | Sitio web completo con layout unificado, cabecera, menú, pie, páginas principales y secciones, formulario de registración y contacto. |
 | 6 | HTML5 | ✅ Completado | Versión HTML5 del sitio de la Librería con etiquetas semánticas, layout unificado, páginas Index, 4 secciones, registración y contacto, formulario HTML5. |
-| 7 | JavaScript | ⏳ Pendiente | Funciones JS aplicadas a uno o más HTML. |
+| 7 | JavaScript |  ✅ Completado | Funciones JS aplicadas a uno o más HTML. |
 
 ---
 
