@@ -1,65 +1,83 @@
-body {
-.books-grid {
-display: grid;
-grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-gap: 1rem;
-margin-top: 1rem;
+:root {
+  --color-principal: #ff6f61; /* coral */
+  --color-secundario: #ffe0b2; /* durazno claro */
+  --color-texto: #333;
+  --color-fondo: #fff8f6;
 }
 
+body {
+  font-family: "Poppins", sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-fondo);
+  color: var(--color-texto);
+}
+
+/* HEADER */
+.site-header {
+  background: var(--color-principal);
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-nav a {
+  color: white;
+  margin-right: 1.5rem;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.main-nav a:hover {
+  text-decoration: underline;
+}
+
+/* LIBROS */
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
 
 .book-card {
-background: white;
-border: 1px solid #ddd;
-border-radius: 8px;
-overflow: hidden;
-box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-transition: transform 0.2s ease;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
 
 .book-card:hover {
-transform: translateY(-5px);
+  transform: translateY(-6px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
-
-
-.book-img {
-width: 100%;
-height: 220px;
-object-fit: cover;
-}
-
-
-.book-info {
-padding: 1rem;
-}
-
-
-.book-info h3 {
-margin: 0.5rem 0;
-}
-
 
 button {
-background-color: #2980b9;
-color: white;
-border: none;
-padding: 0.5rem 1rem;
-border-radius: 5px;
-cursor: pointer;
-transition: background-color 0.3s ease;
+  background-color: var(--color-principal);
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
-
 
 button:hover {
-background-color: #1f5f8a;
+  background-color: #ff8a70;
 }
 
-
+/* FOOTER */
 .site-footer {
-background: #2c3e50;
-color: white;
-text-align: center;
-padding: 1rem 0;
-margin-top: 2rem;
+  background: var(--color-principal);
+  color: white;
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
 }
+body {
+  font-family: "Poppins", sans-serif;
+}
+ body {
+  background: linear-gradient(135deg, #fff8f6, #ffe0b2);
 }
