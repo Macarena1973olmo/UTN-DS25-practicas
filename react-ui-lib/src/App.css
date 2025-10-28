@@ -1,0 +1,73 @@
+:root {
+  /* ¡Variables clave de Bootstrap reemplazadas con tu paleta! */
+  --bs-primary: #ff6b81;        /* Rosa Coral (Tu --color-principal, pero con el tono sugerido) */
+  --bs-secondary: #ff9a9e;      /* Rosa suave (Para hover/degradados) */
+  --bs-body-color: #333333;     /* Color de texto (Tu --color-texto) */
+  --bs-body-bg: #fffafc;        /* Fondo muy claro (Tu --color-fondo) */
+
+  /* Fuente global */
+  --bs-body-font-family: 'Poppins', sans-serif;
+}
+
+body {
+  /* Estilo único y corregido para el body, usando el fondo sugerido */
+  font-family: var(--bs-body-font-family);
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #fffafc, #ff9a9e20); /* Degradado sutil */
+  color: var(--bs-body-color);
+}
+
+/* --- ESTILOS DE COMPONENTES --- */
+
+/* CARD/LIBRO - Mejorando la sugerencia de hover */
+/* Si usas la Card de Bootstrap, usa la clase .card. Si no, usa tu .book-card */
+.card, .book-card {
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  /* La transición ya la tienes, pero la haremos más limpia */
+  transition: all 0.3s ease;
+  border: none; /* Quitamos bordes si Bootstrap los agrega */
+}
+
+/* Aplicando el hover más sutil y elegante de la sugerencia */
+.card:hover, .book-card:hover {
+  transform: translateY(-4px); /* Menos movimiento que tu original -6px */
+  box-shadow: 0 6px 15px rgba(255, 107, 129, 0.4); /* Sombra con color primario */
+}
+
+/* BOTONES */
+.btn-primary, button {
+  background-color: var(--bs-primary) !important;
+  color: white !important;
+  border: none !important;
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-primary:hover, button:hover {
+  background-color: var(--bs-secondary) !important;
+}
+
+/* HEADER y FOOTER - Si usas clases de Bootstrap/React-Bootstrap, las sobrescribimos en el componente */
+/* Si no, mantenemos tus clases: */
+
+.site-header {
+  /* Ya no necesitamos el color aquí, lo pondremos con degradado en Header.jsx */
+  color: white;
+  padding: 1rem 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.site-footer {
+  /* El estilo de footer lo pusimos en línea en Footer.jsx para el degradado */
+  background: none; /* Dejamos el fondo en el JSX */
+  color: var(--bs-body-color); /* Cambiamos a color de texto oscuro */
+  text-align: center;
+  padding: 1rem 0;
+  margin-top: 2rem;
+}
