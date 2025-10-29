@@ -1,33 +1,32 @@
 import React from 'react';
-import { Container, Row, Col, Card, Button, Form, InputGroup } from 'react-bootstrap'; // Importamos Form y InputGroup
+import { Container, Row, Col, Card, Button, Form, InputGroup } from 'react-bootstrap';
 import { motion } from 'framer-motion'; 
-import { FaSearch } from 'react-icons/fa'; // Importamos el ícono de búsqueda (asegúrate de tener react-icons instalado)
+import { FaSearch } from 'react-icons/fa'; 
 
-const libros = [
-  { id: 1, titulo: 'Cien Años de Soledad', autor: 'G. G. Márquez', imagen: '/src/assets/libro1.jpg', descripcion: 'Un clásico de la literatura latinoamericana.' },
-  { id: 2, titulo: 'Rayuela', autor: 'J. Cortázar', imagen: '/src/assets/libro2.jpg', descripcion: 'Una novela única y experimental.' },
-  { id: 3, titulo: 'El Principito', autor: 'A. Saint-Exupéry', imagen: '/src/assets/libro3.jpg', descripcion: 'Una fábula poética e inolvidable.' }
-];
-
-export default function FeaturedBooks() {
+// Recibimos catalogo (filtrado), busqueda y onBusquedaChange
+export default function FeaturedBooks({ catalogo, busqueda, onBusquedaChange }) {
+  
   return (
     <Container className="my-5">
-      <h2 className="text-center mb-4">Libros Destacados</h2>
+      {/* Muestra la cantidad de resultados */}
+      <h2 className="text-center mb-4">Libros Destacados ({catalogo.length} encontrados)</h2> 
       
-      {/* INICIO: BARRA DE BÚSQUEDA (Filtro Visual) */}
+      {/* BARRA DE BÚSQUEDA CONECTADA */}
       <Row className="justify-content-center mb-5">
         <Col xs={12} md={8} lg={6}>
           <InputGroup className="shadow-sm">
             <Form.Control
               placeholder="Buscar libros por título o autor..."
               aria-label="Buscar libros"
-              // Estilo del input para que combine con la paleta
+              // Conectamos el valor al estado que viene de App.jsx
+              value={busqueda} 
+              // Conectamos el onChange al handler que viene de App.jsx
+              onChange={onBusquedaChange} 
               style={{ borderRight: 'none', border: '1px solid #ff9a9e', borderRadius: '8px 0 0 8px' }}
             />
             <Button 
                 variant="primary"
                 id="button-addon2"
-                // Estilo del botón para que combine con la paleta
                 style={{ borderRadius: '0 8px 8px 0' }} 
             >
               <FaSearch style={{ marginRight: '5px' }} />
@@ -36,10 +35,9 @@ export default function FeaturedBooks() {
           </InputGroup>
         </Col>
       </Row>
-      {/* FIN: BARRA DE BÚSQUEDA */}
       
       <Row xs={1} sm={2} md={3} className="g-4">
-        {libros.map((libro) => (
+        {catalogo.map((libro) => ( 
           <Col key={libro.id}>
             <motion.div whileHover={{ scale: 1.05 }}> 
               <Card className="h-100 shadow-sm">
@@ -54,6 +52,13 @@ export default function FeaturedBooks() {
             </motion.div> 
           </Col>
         ))}
+        
+        {/* Mensaje si no hay resultados */}
+        {catalogo.length === 0 && (
+            <Col xs={12} className="text-center mt-4">
+                <p>No se encontraron libros que coincidan con tu búsqueda. 😔</p>
+            </Col>
+        )}
       </Row>
     </Container>
   );
