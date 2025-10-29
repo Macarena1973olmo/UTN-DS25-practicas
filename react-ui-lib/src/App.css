@@ -71,3 +71,29 @@ body {
   padding: 1rem 0;
   margin-top: 2rem;
 }
+/* --- ESTILOS PARA EL CONTEXTO DEL TEMA --- */
+
+/* Tema Claro (Por defecto) */
+.app-theme-claro {
+    background-color: var(--bs-light); /* Fondo suave */
+    color: var(--bs-dark); /* Texto oscuro */
+    min-height: 100vh;
+}
+
+/* Tema Oscuro */
+.app-theme-oscuro {
+    background-color: #1a1a2e; /* Fondo oscuro moderno */
+    color: #ffffff; /* Texto blanco */
+    min-height: 100vh;
+}
+
+/* Ajustes para que los Cards se vean bien en modo oscuro */
+.app-theme-oscuro .card, .app-theme-oscuro .book-card {
+    background: #252640; /* Fondo de tarjeta un poco más claro que el fondo general */
+    color: #ffffff;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+}
+
+.app-theme-oscuro .text-muted {
+    color: #a0a0c0 !important; /* Texto secundario más claro */
+}
