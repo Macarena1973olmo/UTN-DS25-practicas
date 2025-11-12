@@ -11,11 +11,10 @@ import { ThemeProvider, useTheme } from './context/ThemeContext';
 
 // 🎯 1. COMPONENTE INTERNO (Contenido de la App)
 function AppContent() {
-  // Obtenemos el tema del contexto
   const { theme } = useTheme(); 
 
-  // 🚨 CAMBIO CLAVE 1: Nueva URL de Google Books API (Buscando 10 libros de ficción)
-  const { datos: dataAPI, cargando, error } = useFetch('https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=10');
+  // 🚨 LA LÍNEA CRÍTICA: Apunta al Backend local
+  const { datos: dataAPI, cargando, error } = useFetch('http://localhost:3000/api/libros');
   
   const [catalogo, setCatalogo] = useState([]); 
   const [busqueda, setBusqueda] = useState(''); 
@@ -28,23 +27,19 @@ function AppContent() {
     setBusqueda(e.target.value);
   };
 
-  // 🚨 CAMBIO CLAVE 2: Ajuste del useEffect para mapear Google Books (dataAPI.items)
+  // 🚨 LÓGICA DE MAPEO: Esperando la estructura de tu API local (dataAPI.books)
   useEffect(() => {
-    if (dataAPI && dataAPI.items) {
-      // dataAPI.items es el array que contiene los libros en Google Books API
-      const librosMapeados = dataAPI.items.map(item => ({
-        id: item.id, // ID del volumen
-        titulo: item.volumeInfo.title,
-        // Los autores vienen en un array, usamos join para convertirlos a string
-        autor: item.volumeInfo.authors ? item.volumeInfo.authors.join(', ') : 'Autor Desconocido',
-        // Usamos una descripción corta
-        descripcion: item.volumeInfo.description ? item.volumeInfo.description.substring(0, 50) + '...' : 'Sin descripción.',
-        // La imagen está en imageLinks y puede no existir
-        imagen: item.volumeInfo.imageLinks ? item.volumeInfo.imageLinks.thumbnail : '/src/assets/libro_placeholder.jpg',
+    if (dataAPI && dataAPI.books) {
+      const librosMapeados = dataAPI.books.map(libro => ({
+        id: libro.id, 
+        titulo: libro.title, // Usa 'title'
+        autor: libro.author, // Usa 'author'
+        descripcion: 'Libro de la librería local.',
+        imagen: libro.imageUrl || '/src/assets/libro_placeholder.jpg', 
       }));
       setCatalogo(librosMapeados);
     }
-  }, [dataAPI]); // Se ejecuta cuando la data de la API cambia
+  }, [dataAPI]); 
   
   const catalogoFiltrado = catalogo.filter(libro => {
     if (!busqueda.trim()) return true; 
@@ -54,11 +49,11 @@ function AppContent() {
     return titulo.includes(termino) || autor.includes(termino);
   });
   
-  // Manejo de Carga y Error (sin cambios)
+  // Manejo de Carga y Error 
   if (cargando) {
       return (
         <div style={{ textAlign: 'center', padding: '50px' }}>
-          <h2 style={{ color: '#ff6b81' }}>Cargando catálogo de Google Books... ⏳</h2>
+          <h2 style={{ color: '#ff6b81' }}>Cargando catálogo desde tu API local... ⏳</h2>
         </div>
       );
   }
@@ -66,7 +61,8 @@ function AppContent() {
   if (error) {
       return (
         <div style={{ textAlign: 'center', padding: '50px' }}>
-          <h2 style={{ color: 'red' }}>Error al conectar con la API: {error} ❌</h2>
+          <h2 style={{ color: 'red' }}>Error al conectar con tu API local: {error} ❌</h2>
+          <p>Asegúrate de que tu servidor de Express esté corriendo en http://localhost:3000.</p>
         </div>
       );
   }
