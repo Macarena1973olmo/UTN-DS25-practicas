@@ -1,0 +1,14 @@
+# Archivo .gitignore en mi-api-libreria/
+
+# Dependencias de Node
+node_modules/ [cite: 180]
+
+# Archivos compilados de TypeScript
+dist/ [cite: 181]
+
+# Logs y caché
+logs/ [cite: 183]
+npm-debug.log* [cite: 185]
+
+# Archivos de entorno local
+.env [cite: 190]
